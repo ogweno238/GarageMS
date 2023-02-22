@@ -1,0 +1,408 @@
+<?php
+include('header.php');
+include ('session.php');
+$user_query = mysql_query("select * from students where studid='". $_SESSION['Admin_Logon']."'") or die(mysql_error());
+$user_row = mysql_fetch_array($user_query);
+?>
+<?php
+
+require('conn.php');
+require('functions.php');
+@session_start();
+
+if($_SESSION['Admin_Logon'] = isset($member['studid'])){
+		$admin="<meta http-equiv=\"Refresh\" content=\"0;url=./index.php\">";
+		echo($admin); 
+}else{
+
+$stud = mysql_query("select * from students where studid = '".$_SESSION["Admin_UserLogon"]."' group by studid");
+$s = mysql_fetch_array($stud);
+
+
+
+/*$_SESSION['cons'] = $s['councilor'];
+$_SESSION['may'] = $s['Mayor'];
+$_SESSION['vice'] = $s['Vice'];
+$_SESSION['gov'] = $s['gov'];
+$_SESSION['vgov'] = $s['vgov'];
+$_SESSION['congess'] = $s['congres'];
+$_SESSION['board'] = $s['board'];
+$sql  = mysql_query('select * from position');*/
+?>
+<?php
+               
+             include'db_connect.php';
+
+          
+			$RequestedSql = "select * from tbl_service
+								LEFT JOIN profile ON tbl_service.profile_id = profile.profile_id
+								LEFT JOIN servicedetails ON tbl_service.service_id = servicedetails.service_id
+								LEFT JOIN guarage on servicedetails.guarage_id =  guarage.guarage_id WHERE service_status='pending'
+								ORDER BY tbl_service.service_id";
+$RequestedQuery = $connect->query($RequestedSql);
+$countRequested = $RequestedQuery->num_rows;
+			
+			$guaragesql = "select * from guarage WHERE guarage_id=guarage_id";
+             $guaragequery = $connect->query($guaragesql);
+            $countguarage = $guaragequery->num_rows;
+
+           $ConfirmedSql = "select * from tbl_service
+								LEFT JOIN profile ON tbl_service.profile_id = profile.profile_id
+								LEFT JOIN servicedetails ON tbl_service.service_id = servicedetails.service_id
+								LEFT JOIN guarage on servicedetails.guarage_id =  guarage.guarage_id WHERE service_status='Accepted'
+								ORDER BY tbl_service.service_id";
+$ConfirmedQuery = $connect->query($ConfirmedSql);
+$countConfirmed = $ConfirmedQuery->num_rows;
+
+$ServiceSql = "select * from tbl_service
+								LEFT JOIN profile ON tbl_service.profile_id = profile.profile_id
+								LEFT JOIN servicedetails ON tbl_service.service_id = servicedetails.service_id
+								LEFT JOIN guarage on servicedetails.guarage_id =  guarage.guarage_id 
+								ORDER BY tbl_service.service_id";
+$ServiceQuery = $connect->query($ServiceSql);
+$countService = $ServiceQuery->num_rows;
+
+            $connect->close();
+
+?>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="admin/candidate.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #0000CC}
+.style2 {
+	font-size: 24pt;
+	color: #FFCC66;
+	font-weight: bold;
+}
+.style3 {
+	color: #FFCC66;
+	font-size: 16pt;
+}
+-->
+</style>
+</head>
+<?php 
+				$jhjh=$_SESSION['Admin_UserLevel'];
+				if($jhjh==1){
+				?>
+				<?php
+				}
+				?>
+<body>
+<body>
+
+    <?php include('navhead_students.php'); ?>
+
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span3">
+                <div class="hero-unit-3">
+                    <div class="alert-index alert-success">
+                        <i class="icon-calendar icon-large"></i>
+                        <?php
+                        $Today = date('y:m:d');
+                        $new = date('l, F d, Y', strtotime($Today));
+                        echo $new;
+                        ?>
+                    </div>
+                </div>
+                <div class="hero-unit-1">
+                    <ul class="nav  nav-pills nav-stacked">
+                        <li class="nav-header">Links</li>
+                        <li>
+                            <a href="category_focim.php"><i class="icon-home icon-large" style="color:#F00"></i>&nbsp;GARAGE DASGBOARD
+                                  
+                            </a>
+
+                        </li>
+                        <li class="active">
+      <a href="">Book Services</a><br>
+	  </li>
+    </ul>
+                </div>
+
+            </div>
+            <div class="span9">
+            <div class="hero-unit-3">
+			
+                    <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+                        <div class="alert alert-info">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong><i class="icon-user icon-large"></i>&nbsp;Check Garage Services </strong>
+                        </div>
+						
+						
+       
+            <div class="control-group">
+                <div class="controls">
+				
+                 <center>
+<p align="center" style="margin-left:30%"><table width="100%" border="0" align="center">
+  <tr>
+    <td>
+    <Table width="800px" height="85" border="1" align="center" style="margin-left:3%">
+    <center></span></center>
+	
+
+       
+        <tr><td>
+		<div class="col-md-8" style="margin-top:20px; float:right">
+		<div class="panel panel-default">
+			<div class="panel-heading"> <div id="bloglist" class="row">
+
+     <div class="col-xs-6 col-sm-4 col-md-3">
+        <div class="people-item service-card">
+        <div class="panel-heading"> 
+            <div class="pull-left"> 
+            </div>
+            <div class="pull-right text-left">
+            <a href="" data-toggle="modal" data-target="#myRequest" class="btn btn-sm btn-default">Car Fail Start</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+            <div class="media">
+            <div class="media-body">
+                   <center>   <img src="images/car1.jpg" id="pictures"></center>
+                
+            </div>
+            </div>
+        </div>
+    </div></td><td>
+
+      <div class="col-xs-6 col-sm-4 col-md-3">
+        <div class="people-item service-card">
+        <div class="panel-heading"> 
+            <div class="pull-left">  
+            </div>
+            <div class="pull-right text-left">
+            <a href="" data-toggle="modal" data-target="#myRequest" class="btn btn-sm btn-default">Broken Window</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+            <div class="media">
+            <div class="media-body">
+                   <center>   <img src="images/busted-out-window.jpg" id="pictures"></center>
+                
+            </div>
+            </div>
+        </div>
+    </div></td><td>
+       <div class="col-xs-6 col-sm-4 col-md-3">
+        <div class="people-item service-card">
+        <div class="panel-heading"> 
+            <div class="pull-left"> 
+            </div>
+            <div class="pull-right text-left">
+             <a href="#" data-toggle="modal" data-target="#myRequest" class="btn btn-sm btn-default">Unkown Breakdown</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+            <div class="media">
+           
+            <div class="media-body">
+                <center>   <img src="images/Person sitting near their broken down car.jpg" id="pictures"></center>
+                
+            </div>
+            </div>
+        </div>
+    </div></td><td>
+
+     <div class="col-xs-6 col-sm-4 col-md-3">
+        <div class="people-item service-card">
+        <div class="panel-heading"> 
+            <div class="pull-left"> 
+            </div>
+            <div class="pull-right text-left">
+            <a href="" data-toggle="modal" data-target="#myRequest" class="btn btn-sm btn-default">Key Locked Inside</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+            <div class="media">
+            <div class="media-body" style="background:url(images/Person%20sitting%20near%20their%20broken%20down%20car.jpg)">
+              
+               <center>   <img src="images/key locked in car.jpg" id="pictures"></center><style type="text/css">
+			  #pictures {
+    height: 120px;
+    width: 170px;
+	 border-radius: 6px;
+}
+.img-rounded {
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+.img-rounded {
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+img {
+    vertical-align: middle;}  </style>
+  <script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script></center> </div>
+            </div>
+        </div>
+    </div></td>
+
+      </div>
+    </div></tr>
+	<tr><td>
+
+     <div class="col-xs-6 col-sm-4 col-md-3">
+        <div class="people-item service-card">
+        <div class="panel-heading"> 
+            <div class="pull-left">         
+             
+            </div>
+            <div class="pull-right text-left"><a href="" data-toggle="modal" data-target="#myRequest" class="btn btn-sm btn-default">Dump-Fuel</a>
+           
+            </div>
+            <div class="clearfix"></div>
+        </div>
+            <div class="media">
+           
+            <div class="media-body">
+                  <center>   <img src="images/dieselpump.jpg" id="pictures"></center> </div>
+            </div>
+            </div>
+        </div></td><td>
+   
+      <div class="col-xs-6 col-sm-4 col-md-3">
+        <div class="people-item service-card">
+        <div class="panel-heading"> 
+            <div class="pull-left">  
+            </div>
+            <div class="pull-right text-left">
+            <a href="" data-toggle="modal" data-target="#myRequest" class="btn btn-sm btn-default">Car-Crash</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+            <div class="media">
+            <div class="media-body">
+                    <center>   <img src="images/car-crash-claims-featured.png" id="pictures"></center>
+                
+            </div>
+            </div>
+        </div>
+    </div></td><td>
+
+       <div class="col-xs-6 col-sm-4 col-md-3">
+        <div class="people-item service-card">
+        <div class="panel-heading"> 
+            <div class="pull-left">
+            </div>
+            <div class="pull-right text-left">
+            <a href="" data-toggle="modal" data-target="#myRequest" class="btn btn-sm btn-default">Engine-Breakdown</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+            <div class="media">
+           
+            <div class="media-body">
+                   <center>   <img src="images/timthumb.jpg" id="pictures"></center>
+                
+            </div>
+            </div>
+        </div>
+    </div></td><td>
+
+     <div class="col-xs-6 col-sm-4 col-md-3">
+        <div class="people-item service-card">
+        <div class="panel-heading"> 
+            <div class="pull-left">
+            </div>
+            <div class="pull-right text-left">
+            <a href="" data-toggle="modal" data-target="#myRequest" class="btn btn-sm btn-default">Puncher</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+            <div class="media">
+            <div class="media-body">
+                  <center>   <img src="images/puncher.jpg" id="pictures"></center>
+                
+            </div>
+            </div>
+        </div>
+    </div></td></tr>
+
+      </div>
+			<div class="panel-body">
+				
+			</div>	
+		</div>
+		
+	</div>
+         
+        </tr>
+        
+       
+        <tr>
+          <td colspan="3" align="center" class="TrHover style6">&nbsp;</td>
+        </tr>
+       
+      </Table></td>
+    <td valign="top" nowrap>
+      </td>
+  </tr>
+</table></p>
+</Center>
+                </div>
+            </div>  
+            
+        </form>
+
+    </div>
+                          <style type="text/css">
+.composemail {
+    padding-right: 9px;
+    padding-left: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+
+.label, .composemail {
+    display: inline-block;
+    padding: 2px 4px;
+    font-size: 11.844px;
+    font-weight: bold;
+    line-height: 14px;
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #F00;
+}
+</style>
+                    <!-- end slider -->
+                </div>
+            </div>
+
+        </div>
+<?php include('footer.php'); ?>
+    </div>
+</div>
+</div>
+
+  
+</body>
+</html>
+<?php }?>

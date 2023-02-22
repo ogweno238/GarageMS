@@ -1,0 +1,136 @@
+@charset "utf-8";
+.service-card {
+    background:#ffffff;
+    padding: 0;
+    min-height: 170px;
+}
+
+.service-card .panel-heading {
+    padding: 10px;
+    border-bottom:1px solid #f2f2f2;
+}
+
+.service-card .media-object {
+    height: 33px!important;
+    width: unset!important; 
+    padding: 0;
+
+}
+
+@media screen and (max-width: 480px) {
+    .service-card .panel-heading .pull-right {
+        float: right !important;
+    }
+}
+
+.service-card .media {
+    padding:10px;
+    margin-top: 0;
+}
+.service-card .thumbnail{
+    margin-bottom:0; 
+    border:0;
+}
+
+.service-card h4 {
+    line-height: 24px;
+    font-size: 14px;
+}
+
+.service-card .text-muted {
+    font-size: 12px;
+}
+
+body {
+    background: #151515;
+}
+
+.logopanel {
+    background: #ffffff;
+}
+
+.logopanel {
+    padding: 17px 10px;
+}
+
+.logopanel img {
+    width: 100%;
+}
+
+
+
+.auth-container {
+    width: 360px;
+    margin: 90px auto 0 auto;
+}
+
+.fa-success {
+    color: green;
+}
+
+.fa-danger {
+    color: #D9534F;
+}
+
+.disabled {
+	opacity: 0.7;
+}
+
+.disabled a, .disabled .fa, .disabled div {
+	color: gray !important;
+}
+
+.text-bold {
+	font-weight: bold;
+}
+
+.thumbnail-container {
+    position: relative;
+}
+
+.photo-certified {
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+}
+
+
+.thumbnail.thumbnail-2x {
+    max-width: 240px;
+    max-height: 320px;
+}
+
+.people-item .ckbox {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.profile-social-list a.active {
+    color: #000000;
+}
+
+.required .control-label:after {
+    content: " *";
+    color: red;
+}
+
+.intl-tel-input {
+    display: block !important;
+}
+
+.docs-flip-horizontal {
+    transform: scale(-1, 1);
+}
+
+.docs-toolbar {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.user-profile .control-label {
+    text-align: left;
+}/* CSS Document */
+

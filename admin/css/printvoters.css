@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+
+table{
+	border:1px #000 dotted;
+	width:100%;	
+	background:#FFF;
+	height:auto;
+	margin:auto;
+	box-shadow:3px 3px 9px #000;
+}
+th{
+	background:#000;
+	color:#FFF;
+	font-weight:bold;
+	padding:5px;
+	/*box-shadow:3px 3px 9px #000;*/
+}
+td{
+	border:1px #000 dotted;	
+}
+tr:hover{
+	/*box-shadow: 3px 3px 5px #000;*/
+	background-color:#09F;	
+	color:#FFF;
+}

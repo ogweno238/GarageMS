@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
+
+	<title>AutoFill example - Horizontal fill</title>
+	<link rel="stylesheet" type="text/css" href="../../../media/css/jquery.dataTables.css">
+	<link rel="stylesheet" type="text/css" href="../css/dataTables.autoFill.css">
+	<link rel="stylesheet" type="text/css" href="../../../examples/resources/syntax/shCore.css">
+	<link rel="stylesheet" type="text/css" href="../../../examples/resources/demo.css">
+	<style type="text/css" class="init">
+
+	</style>
+	<script type="text/javascript" language="javascript" src="../../../media/js/jquery.js"></script>
+	<script type="text/javascript" language="javascript" src="../../../media/js/jquery.dataTables.js"></script>
+	<script type="text/javascript" language="javascript" src="../js/dataTables.autoFill.js"></script>
+	<script type="text/javascript" language="javascript" src="../../../examples/resources/syntax/shCore.js"></script>
+	<script type="text/javascript" language="javascript" src="../../../examples/resources/demo.js"></script>
+	<script type="text/javascript" language="javascript" class="init">
+
+
+$(document).ready(function() {
+	var table = $('#example').DataTable();
+
+	new $.fn.dataTable.AutoFill( table, {
+		mode: 'x'
+	} );
+} );
+
+
+	</script>
+</head>
+
+<body class="dt-example">
+	<div class="container">
+		<section>
+			<h1>AutoFill example <span>Horizontal fill</span></h1>
+
+			<div class="info">
+				<p>By default AutoFill will allow the fill to operate only on a single column at a time (i.e.
+				vertically). However, it has the ability to provide the fill either horizontally, over both axis or
+				limited to just one axis depending on the direction of the drag. This option is provided by the
+				<code>mode</code> sanitisation option.</p>
+
+				<p>In this case it is set to <code>x</code> (i.e. horizontal axis) to provide the filler along a row,
+				rather than a column.</p>
+
+				<p>For the full range of options and syntax for <code>mode</code> please refer to the <a href=
+				"//datatables.net/extras/autofill/options">AutoFill documentation</a>.</p>
+			</div>
+
+			<table id="example" class="display" cellspacing="0" width="100%">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Position</th>
+						<th>Office</th>
+						<th>Age</th>
+						<th>Start date</th>
+						<th>Salary</th>
+					</tr>
+				</thead>
+
+				<tfoot>
+					<tr>
+						<th>Name</th>
+						<th>Position</th>
+						<th>Office</th>
+						<th>Age</th>
+						<th>Start date</th>
+						<th>Salary</th>
+					</tr>
+				</tfoot>
+
+				<tbody>
+					<tr>
+						<td>Tiger Nixon</td>
+						<td>System Architect</td>
+						<td>Edinburgh</td>
+						<td>61</td>
+						<td>2011/04/25</td>
+						<td>$320,800</td>
+					</tr>
+					<tr>
+						<td>Garrett Winters</td>
+						<td>Accountant</td>
+						<td>Tokyo</td>
+						<td>63</td>
+						<td>2011/07/25</td>
+						<td>$170,750</td>
+					</tr>
+					<tr>
+						<td>Ashton Cox</td>
+						<td>Junior Technical Author</td>
+						<td>San Francisco</td>
+						<td>66</td>
+						<td>2009/01/12</td>
+						<td>$86,000</td>
+					</tr>
+					<tr>
+						<td>Cedric Kelly</td>
+						<td>Senior Javascript Developer</td>
+						<td>Edinburgh</td>
+						<td>22</td>
+						<td>2012/03/29</td>
+						<td>$433,060</td>
+					</tr>
+					<tr>
+						<td>Airi Satou</td>
+						<td>Accountant</td>
+						<td>Tokyo</td>
+						<td>33</td>
+						<td>2008/11/28</td>
+						<td>$162,700</td>
+					</tr>
+					<tr>
+						<td>Brielle Williamson</td>
+						<td>Integration Specialist</td>
+						<td>New York</td>
+						<td>61</td>
+						<td>2012/12/02</td>
+						<td>$372,000</td>
+					</tr>
+					<tr>
+						<td>Herrod Chandler</td>
+						<td>Sales Assistant</td>
+						<td>San Francisco</td>
+						<td>59</td>
+						<td>2012/08/06</td>
+						<td>$137,500</td>
+					</tr>
+					<tr>
+						<td>Rhona Davidson</td>
+						<td>Integration Specialist</td>
+						<td>Tokyo</td>
+						<td>55</td>
+						<td>2010/10/14</td>
+						<td>$327,900</td>
+					</tr>
+					<tr>
+						<td>Colleen Hurst</td>
+						<td>Javascript Developer</td>
+						<td>San Francisco</td>
+						<td>39</td>
+						<td>2009/09/15</td>
+						<td>$205,500</td>
+					</tr>
+					<tr>
+						<td>Sonya Frost</td>
+						<td>Software Engineer</td>
+						<td>Edinburgh</td>
+						<td>23</td>
+						<td>2008/12/13</td>
+						<td>$103,600</td>
+					</tr>
+					<tr>
+						<td>Jena Gaines</td>
+						<td>Office Manager</td>
+						<td>London</td>
+						<td>30</td>
+						<td>2008/12/19</td>
+						<td>$90,560</td>
+					</tr>
+					<tr>
+						<td>Quinn Flynn</td>
+						<td>Support Lead</td>
+						<td>Edinburgh</td>
+						<td>22</td>
+						<td>2013/03/03</td>
+						<td>$342,000</td>
+					</tr>
+					<tr>
+						<td>Charde Marshall</td>
+						<td>Regional Director</td>
+						<td>San Francisco</td>
+						<td>36</td>
+						<td>2008/10/16</td>
+						<td>$470,600</td>
+					</tr>
+					<tr>
+						<td>Haley Kennedy</td>
+						<td>Senior Marketing Designer</td>
+						<td>London</td>
+						<td>43</td>
+						<td>2012/12/18</td>
+						<td>$313,500</td>
+					</tr>
+					<tr>
+						<td>Tatyana Fitzpatrick</td>
+						<td>Regional Director</td>
+						<td>London</td>
+						<td>19</td>
+						<td>2010/03/17</td>
+						<td>$385,750</td>
+					</tr>
+					<tr>
+						<td>Michael Silva</td>
+						<td>Marketing Designer</td>
+						<td>London</td>
+						<td>66</td>
+						<td>2012/11/27</td>
+						<td>$198,500</td>
+					</tr>
+					<tr>
+						<td>Paul Byrd</td>
+						<td>Chief Financial Officer (CFO)</td>
+						<td>New York</td>
+						<td>64</td>
+						<td>2010/06/09</td>
+						<td>$725,000</td>
+					</tr>
+					<tr>
+						<td>Gloria Little</td>
+						<td>Systems Administrator</td>
+						<td>New York</td>
+						<td>59</td>
+						<td>2009/04/10</td>
+						<td>$237,500</td>
+					</tr>
+					<tr>
+						<td>Bradley Greer</td>
+						<td>Software Engineer</td>
+						<td>London</td>
+						<td>41</td>
+						<td>2012/10/13</td>
+						<td>$132,000</td>
+					</tr>
+					<tr>
+						<td>Dai Rios</td>
+						<td>Personnel Lead</td>
+						<td>Edinburgh</td>
+						<td>35</td>
+						<td>2012/09/26</td>
+						<td>$217,500</td>
+					</tr>
+					<tr>
+						<td>Jenette Caldwell</td>
+						<td>Development Lead</td>
+						<td>New York</td>
+						<td>30</td>
+						<td>2011/09/03</td>
+						<td>$345,000</td>
+					</tr>
+					<tr>
+						<td>Yuri Berry</td>
+						<td>Chief Marketing Officer (CMO)</td>
+						<td>New York</td>
+						<td>40</td>
+						<td>2009/06/25</td>
+						<td>$675,000</td>
+					</tr>
+					<tr>
+						<td>Caesar Vance</td>
+						<td>Pre-Sales Support</td>
+						<td>New York</td>
+						<td>21</td>
+						<td>2011/12/12</td>
+						<td>$106,450</td>
+					</tr>
+					<tr>
+						<td>Doris Wilder</td>
+						<td>Sales Assistant</td>
+						<td>Sidney</td>
+						<td>23</td>
+						<td>2010/09/20</td>
+						<td>$85,600</td>
+					</tr>
+					<tr>
+						<td>Angelica Ramos</td>
+						<td>Chief Executive Officer (CEO)</td>
+						<td>London</td>
+						<td>47</td>
+						<td>2009/10/09</td>
+						<td>$1,200,000</td>
+					</tr>
+					<tr>
+						<td>Gavin Joyce</td>
+						<td>Developer</td>
+						<td>Edinburgh</td>
+						<td>42</td>
+						<td>2010/12/22</td>
+						<td>$92,575</td>
+					</tr>
+					<tr>
+						<td>Jennifer Chang</td>
+						<td>Regional Director</td>
+						<td>Singapore</td>
+						<td>28</td>
+						<td>2010/11/14</td>
+						<td>$357,650</td>
+					</tr>
+					<tr>
+						<td>Brenden Wagner</td>
+						<td>Software Engineer</td>
+						<td>San Francisco</td>
+						<td>28</td>
+						<td>2011/06/07</td>
+						<td>$206,850</td>
+					</tr>
+					<tr>
+						<td>Fiona Green</td>
+						<td>Chief Operating Officer (COO)</td>
+						<td>San Francisco</td>
+						<td>48</td>
+						<td>2010/03/11</td>
+						<td>$850,000</td>
+					</tr>
+					<tr>
+						<td>Shou Itou</td>
+						<td>Regional Marketing</td>
+						<td>Tokyo</td>
+						<td>20</td>
+						<td>2011/08/14</td>
+						<td>$163,000</td>
+					</tr>
+					<tr>
+						<td>Michelle House</td>
+						<td>Integration Specialist</td>
+						<td>Sidney</td>
+						<td>37</td>
+						<td>2011/06/02</td>
+						<td>$95,400</td>
+					</tr>
+					<tr>
+						<td>Suki Burks</td>
+						<td>Developer</td>
+						<td>London</td>
+						<td>53</td>
+						<td>2009/10/22</td>
+						<td>$114,500</td>
+					</tr>
+					<tr>
+						<td>Prescott Bartlett</td>
+						<td>Technical Author</td>
+						<td>London</td>
+						<td>27</td>
+						<td>2011/05/07</td>
+						<td>$145,000</td>
+					</tr>
+					<tr>
+						<td>Gavin Cortez</td>
+						<td>Team Leader</td>
+						<td>San Francisco</td>
+						<td>22</td>
+						<td>2008/10/26</td>
+						<td>$235,500</td>
+					</tr>
+					<tr>
+						<td>Martena Mccray</td>
+						<td>Post-Sales support</td>
+						<td>Edinburgh</td>
+						<td>46</td>
+						<td>2011/03/09</td>
+						<td>$324,050</td>
+					</tr>
+					<tr>
+						<td>Unity Butler</td>
+						<td>Marketing Designer</td>
+						<td>San Francisco</td>
+						<td>47</td>
+						<td>2009/12/09</td>
+						<td>$85,675</td>
+					</tr>
+					<tr>
+						<td>Howard Hatfield</td>
+						<td>Office Manager</td>
+						<td>San Francisco</td>
+						<td>51</td>
+						<td>2008/12/16</td>
+						<td>$164,500</td>
+					</tr>
+					<tr>
+						<td>Hope Fuentes</td>
+						<td>Secretary</td>
+						<td>San Francisco</td>
+						<td>41</td>
+						<td>2010/02/12</td>
+						<td>$109,850</td>
+					</tr>
+					<tr>
+						<td>Vivian Harrell</td>
+						<td>Financial Controller</td>
+						<td>San Francisco</td>
+						<td>62</td>
+						<td>2009/02/14</td>
+						<td>$452,500</td>
+					</tr>
+					<tr>
+						<td>Timothy Mooney</td>
+						<td>Office Manager</td>
+						<td>London</td>
+						<td>37</td>
+						<td>2008/12/11</td>
+						<td>$136,200</td>
+					</tr>
+					<tr>
+						<td>Jackson Bradshaw</td>
+						<td>Director</td>
+						<td>New York</td>
+						<td>65</td>
+						<td>2008/09/26</td>
+						<td>$645,750</td>
+					</tr>
+					<tr>
+						<td>Olivia Liang</td>
+						<td>Support Engineer</td>
+						<td>Singapore</td>
+						<td>64</td>
+						<td>2011/02/03</td>
+						<td>$234,500</td>
+					</tr>
+					<tr>
+						<td>Bruno Nash</td>
+						<td>Software Engineer</td>
+						<td>London</td>
+						<td>38</td>
+						<td>2011/05/03</td>
+						<td>$163,500</td>
+					</tr>
+					<tr>
+						<td>Sakura Yamamoto</td>
+						<td>Support Engineer</td>
+						<td>Tokyo</td>
+						<td>37</td>
+						<td>2009/08/19</td>
+						<td>$139,575</td>
+					</tr>
+					<tr>
+						<td>Thor Walton</td>
+						<td>Developer</td>
+						<td>New York</td>
+						<td>61</td>
+						<td>2013/08/11</td>
+						<td>$98,540</td>
+					</tr>
+					<tr>
+						<td>Finn Camacho</td>
+						<td>Support Engineer</td>
+						<td>San Francisco</td>
+						<td>47</td>
+						<td>2009/07/07</td>
+						<td>$87,500</td>
+					</tr>
+					<tr>
+						<td>Serge Baldwin</td>
+						<td>Data Coordinator</td>
+						<td>Singapore</td>
+						<td>64</td>
+						<td>2012/04/09</td>
+						<td>$138,575</td>
+					</tr>
+					<tr>
+						<td>Zenaida Frank</td>
+						<td>Software Engineer</td>
+						<td>New York</td>
+						<td>63</td>
+						<td>2010/01/04</td>
+						<td>$125,250</td>
+					</tr>
+					<tr>
+						<td>Zorita Serrano</td>
+						<td>Software Engineer</td>
+						<td>San Francisco</td>
+						<td>56</td>
+						<td>2012/06/01</td>
+						<td>$115,000</td>
+					</tr>
+					<tr>
+						<td>Jennifer Acosta</td>
+						<td>Junior Javascript Developer</td>
+						<td>Edinburgh</td>
+						<td>43</td>
+						<td>2013/02/01</td>
+						<td>$75,650</td>
+					</tr>
+					<tr>
+						<td>Cara Stevens</td>
+						<td>Sales Assistant</td>
+						<td>New York</td>
+						<td>46</td>
+						<td>2011/12/06</td>
+						<td>$145,600</td>
+					</tr>
+					<tr>
+						<td>Hermione Butler</td>
+						<td>Regional Director</td>
+						<td>London</td>
+						<td>47</td>
+						<td>2011/03/21</td>
+						<td>$356,250</td>
+					</tr>
+					<tr>
+						<td>Lael Greer</td>
+						<td>Systems Administrator</td>
+						<td>London</td>
+						<td>21</td>
+						<td>2009/02/27</td>
+						<td>$103,500</td>
+					</tr>
+					<tr>
+						<td>Jonas Alexander</td>
+						<td>Developer</td>
+						<td>San Francisco</td>
+						<td>30</td>
+						<td>2010/07/14</td>
+						<td>$86,500</td>
+					</tr>
+					<tr>
+						<td>Shad Decker</td>
+						<td>Regional Director</td>
+						<td>Edinburgh</td>
+						<td>51</td>
+						<td>ÜâÎ¸J/§çÏPÅ‡bìU!Oääﬁû√— 7Î»MùØÊX¥Ÿ–!>ÑPû§Câ€æH/ä8$çôïŸ•Vuá»àààˆnLòQ1/Äﬂ˝≈;“ıÀÈ•W+~|_-¡p≠‹3W_∫Ü{ŒoÎRO%≈R_‘¯ﬁàÀQ¥£z[IiπY'ó	÷R=Úê4a¬˘oU:Ñ8Aíõ?¸V £~]Ä¨!K`¶Tl{Y<ƒG°B—}O9i—<(¿|˝ÕıÖü¡©ªi´nŒ∂]Ö◊Àô-++˙øûWÿ·3WôÆ¥D É
+Ú⁄⁄5rBäŸºº˝ò–&ˆîjs›¨â‘~/©ﬁrO¢wÑ«$Åº©öHœò‰I√|íT”KSruMXnÎ>ã=â“H>§ÜåíjW‰}’r? gK€†°«ªì.ëx;°¶GorÙ—uØä`íêííçîî÷]ÙÙZê8⁄’f-Ÿ^Û»©èr⁄Ìé–,ñÿX⁄£ˆ∞À˝”ièñÓ}∂Ümq.ÁØ7)çº@MU< Û6ÌAXQäß√
+gCsµ„,Ω|˜ÔNÃœï™≠+^ãπGÆﬂI›8’hn€|@ëñoŸ¡ pÖJ~HwP#¶¶ÉU'È˜.-T$#Õê”œz,d^k+ë»úù&!8	Éxê·“9(§6Úä_:Jß*Û–°;ñëÉ û∫úÖ#ä¬±IÔˆ¯¯åß∆K¿©NìÎ˚äî1%é9”jw>Í¶K™6dòıŒ˚6õàÈ≤´ı≥˝4–l‘K*≥ÖTT~M’‰Ì”WË¡∫ü†≤~hED~ﬂ§(ñpåûÖØ$n¯“ïÍ˘ûÜ{µvm‘Ë±é€ØuÆO]˝qãu$ﬂ‚1?µ€%)⁄—ûÎI2Mç]\Á^∫öËY≠]”MŒ+ªî#©€ÎhÒä˚’…©±B+˙êÌ†GPôúDØßB òdå˜ä…ΩÍ˚v …’I?ŒLG,>B¿â…∆âƒLÍEà1b q‡ÊBS‰£{êqnp⁄áq‚ŒÌEŸ‚Õ®¿ØÛP_Ëî¶˙Î·Â}Œº›beKÒ†.îÁ*<…r±^´-ãÉ…á)çlPÉ©f'+CﬁE5ÔdGÿ3Óî[[éı˘x« ùmπm∂˘»õ∏§4Jeÿ<.09¢sQm\“ÌYUÕÕ-ŸV-≠‰Àò!N `Ï_ŒyÍJàπÏs6~ó{:◊≤p^«˝èGqÃ2X•Ëœ?∏_D®J¨“CGÉç$x¸Ê¿Gõ∂$ƒ÷oˆˆ
+7~∞∑ôAßÇø®¡3-ıÄÓªåì™MC˙´ñj¡2,ÑÅ)Ó~Ïrö0\Fóπ5V∆ÕØ!7˙Ä°.ò"z˛>R%≥y™n;ÙÁ◊mÿ=>œÛπÖú{ π‚ÿNk¥Æ˘sŸ””n&È3\ $Ù€ï©ııX:‰#ûÜ4â‚Éä†ƒ)~ÃØr<© Cæ¿ZÔò‘∆⁄Z›+¸Ω+„S]É˝Q˛ù:ëHÌTtBÓqô¿l._æïfõ}∏Ÿ0ù|‘ﬁ8Ÿ1ÔN∏øyÓ¶¸√FJô§ƒ(=!∏Ài´f’ÒÍÅr1ˇJ€*%GçﬁµGºdH$◊±UmWˇPRgÉ©•Äcs$öìâπQ
+@;vùE⁄Èc¨ÙX
+‘T@›”%wútDÙœ˜705ù€m?≠=”æ%)äëá
+Ø£ç\˛rOtπòÒWò¡igÈü*]”∫Mj´!y*Ã	jÕk&6ﬁ∂°Ö?[§ﬁÌ≠Ü¬óCCó¢z—ã—⁄ãclãd˚ªﬁ¯ºﬁ¨≠ÇÉiÇf©≠¨w5/*◊b∞â[d£'tè}q9‡¨k\•R£}ÍOèòºÄÅáD§IÔ…÷;Î´aKÎƒ1ü†Tæó≈CƒÚy’À“y7ÇZª“¬!É˝Jå™`\ò£ï•újÈÕpô-<ßΩé	ﬁΩ˙±,”õzÊ†À/∏Í‘XÈá‘µD5ÈoøÔ!˙ÍüNfæÑ∆˚®ôyâœá°∞ …ÅC¸Ó&=ß≠
+ñ|{ıi™tU5√óC∆ú€9P≠+Ü_op‚£"ûBÛ±Ld\C∏]x Õûûí˙∫å(Ú]Çº≤/¨ô5hﬂ’›Gè∏Ö<i]Õ˝|•RFv®ø’AíU Ø™j[{G+˘˝Ùí~/íù´”¥ V≈∆íË˘+KPˆA(>≈‡lkÅac…ır¿Xî5ªztÁÁ√≥eÿµ©˜°…ñygfåÍçáﬁ¬∆	”àe›	r)M
+…ºQ%˛‰ûÛR¬>–yWÛGÛ†FXX˚@îÑ•ûxJ˛«Ï§°î?∂˙∑«£H`Ï¯|¿YW^ñHehÒ(ÀÈ¥ÕÕƒD~ºÖËb´}ZÄ2Û+<èﬁ√qûV˝· ≠r›ãÂ5~„ÃÑ|›.5çúyä—ÿ∞n´Ø8o˙•~15
+Ìö†µOe=úƒò»]9Èo6´uêê*T´”®ı0òÛà_—¯wŸ'Në—-ﬂµ–PõÄΩº¬h˛J§6≤A	∂éıç⁄Z÷1∫åŒí>,Öe°+t2rÁXùÖ’WòéOnÚ˚µÙµés¿%¢®c(æ{Çö.D<∞11L ◊fúª/VrµÇusË;®à›íM¿iª˛ı3~°?oWRÊ§Ñ(<◊0ΩQeW¨ÕÆ{âKfõ°SW/ŸI3Í8á'AºU•Hr©Ÿ$éÿüÒ•Óª^nœù&æìÌˆ˛w«cê~≠\ûãÄòô8√ÌúKr„ûYæÈ~p◊úŸø¥™7ä–Kòﬁ-∫5(;◊K@wÓJA§<(ë◊◊æœ•[p Ø‹l~ﬁ6q¶Gd&J{|ìO`UÂ ¨a)¶Â-äxXrë˘ÉÛ]ÒØﬁôæ‹í◊A	Ãÿ[V±˘~ö≥Õw]5Ä5·¬cé±ä”uOk•o¶ZÕÊﬂªÈ≥‘_∂Ä¡F1(Qÿ»¿¢ß+∞-qñÁô"Ø§…	î¬>+‹n™WΩ=
+¡‰’8∂-L3ƒΩ„A- 5Ê]ßÿjõCaSCNµ∏qô2πÁòKaö"(Ñﬁ'È¿9&k¶ ˜ÉªZüãy˚∆Z8®ÿ–{zÒ/
+¢è”≥ù1oõ• oõ–´câÕª1f$	Ÿ”X“ŸÈFVq Jù•yc3ˇ¶9 ªrÛÚ[46DAA/\èªè˛”ÓË\>ÁƒÉÄXSÖ¬˙ıÜi »¡‘¯sÓ’EcËNΩÈAÖﬁßt1√~Uøb=À¸Ã}k’Çª ã≤CÒÖçíÕìD}léoNLˇˇﬂ‘í:ù0u˝≥∏˚L≈PñÊGym”r=¨˜§@ô`∆‹2AÇ⁄‚œÙ:=~@∑aÔ¢ÈcV,µ˛…éæ(}ßcèöxy≤àÔÄ•I!u’Ω®•÷ﬁa6Ú˚@w&©,Àº?'«ªIòâqº≈œ…KÏÑSÎÀﬁ_¡ﬁ≠Á,7˛¸=ò7ás“_©@“≤˘o«üj›Zæñ‰sª¸à4ÁY#Èo≈ª~3uf˚ÿÒT{è_Ï‚•Lœ‰X‰8Ki8áâ≈Ú qßY€åŸ†«ú5ıi%xçÑ‰-∑tÊÎn`∑¬Ò#äã[:1R˘!ÚuV£a/ûO7ûÏ©∫xΩº∑6;˝Q¶π‹ùS“ÿE–[};∏t‚Pr©1Ø+™∞|-ªÁ|Ÿ…ä™*œ—2ìäΩy¶yjQÛ¡W€¸$áÈ«CËâ Vº±§q£π˛c›†ïîÎLTnN5SeãS66ä√8≠Û8ﬂoò⁄;& öî‹§nÉ|Q|¡‚%‚/gÂçè.L3FÈ
+a—IÏ©P L◊®˙)ïØ›‰í˛⁄^áììb>=ŸÊâıI&o<Iƒñ{√ô∞åª]±§T9Õ∫(»u%9ë%N—,√œÃOrÁÁ8ax1Êﬁ ÃÓT+'VÆÂùø—i‹‘îgçºÖ~#û^™?}“»:{m8X|MÜ°çVZ‰Z‚UœO^jﬂ<©àPK(‹jxz'≥/EI,Cv⁄˚˚ÚΩ◊X¯" i≤ËK<ÿ8$D%[˝ ∆%<ü„MÁÎ‡Î∑=_≈HöÖ]Àw‘ûÀÖ•^÷Íáì\XõµB7¶æŒ^Ï˜Yˇƒ…1¯ì‰ΩÓ˜èx0})ã_–∂…€Á~Ó]ä≠'Æ≤ÅIé¸ÙÜëè±1tp0¬∞’óà:È6ﬁÉ≈Ì|˚Ωˇæ…‘Lº[ÁO ÓÔÏtèr¢KÑ ¬J¨§’÷Û
+÷≤xüπüÿ¢Èõ(édâ≥ı§CJBÃÑËunµÊ|éìﬁçÅÀ7";Z)mÚÏ‹¯{ÀW\]Áûlw≤T}b˘)„T≈´ÂlŒ–∫¢äWéËü“¥⁄≥OPvô„Õpx’\vofŒÖﬁ–z¨$C*É GÍâ∆ssör qó¨»j34 ÚKÄ…´NW~$rå~Ú±ô‰ÁËC–„À>w©Ã†q¿&Œ¡àñçﬂ0∂¬ ˚Á<∏.'/Ë<ñÌ˝©íœ^‡î(oVâ)Í\’Sπ◊πæL\˝}∫ º†7Jõt.fr⁄f  {5œ˙‘~Ù¬§¢-õC|@f‡˛6∑g˜Tø}œk5j∏ù kGœòF(çmcÛÓ8õ(rãmmz'O	·ÜõWv…–(zgMAïéÿ˛këD@óï®@√¥ÿ‹˘ﬁ!#Cb°yÏÿà[Œ∫Äi"ßóY29©Î≈¶Á˙OÕTÎr*Ùƒî?™ó¿Í∫öÎØ;ä[≥gFŸ∫ÀrS∆}PU¯dü’ç.]Î PiàÜ¯p—ù˝ÓHNÒ˜È≈a2√S&-9®Ì“µ$5n~~›ÉÇ‡Y¯“	Û»ﬁÄÄé}áú“åÒBîﬁ¿ÀÊÔ›ﬁ/d˘Ù'Œ¯¨øòã»Çi:Ù‡CÍÉ‚J3◊∏qTÃA1™∆ki˘ßÿô⁄6–¸!t`¬æ7ÒôCôâ£ÈÆ«äI~ﬂ≈cÚ_@ã !Ë¶+~º°°ı’æ1¡¯XÀO9|Yc∂ú√&ZŒ˙ªÛÏ≈ím>BÇ>§F®ôˆ[`1◊uï·F∑ÒÉö§¶ùæv∆˚ƒÀ+LP<naKCôfß~3¯ûóì—òñGIØhBúúV†ŒÑ∂u\ËG&—#T∏2-fùöãR∆˙››yõˆ‰·ñm7<îÉX∏˙•L¿ˇ¬˚©:Íö_˛™ÍÒAw	(‹∆KitÈc	,69ÊÀ¿wõ\|§îl5åbéìNé˚?ﬂ"á¡•xêÊ∞ó8 nèqãx~VltºûWÚá†WïÚJÿC.ßûËb§êöÿû∏„íÁá}´ZÜ˝Å)íëvPGmëπqëtl'Ñ≈VlFΩD˝Øc«˝ûÈ˝£Í)l;ôº3!Eá8í0]f©∂
+˚có˝
+ü≠MÚ0›Ûó	†$–“≤föÒ&+A5Ñ)}Œ>ﬁ>2Ø8o„yh˚ßÌDÂÔ&\o^– j◊êÔºÖaøÆ8£Ë‚¸;OπL≤U˘KÁ‚∆,ù…ıÁÏ¶Ú§4(3"/O◊«˘VAüŸ‘+yÜºÙçËÇ
+®Î@≥Y¿ë !P5  n ç¥*}Mƒ[I)W
